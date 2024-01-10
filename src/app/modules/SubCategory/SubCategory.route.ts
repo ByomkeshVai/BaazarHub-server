@@ -11,7 +11,7 @@ router.post(
   '/',
   validateRequest(SubCategoryValidations.CreateSubCategoryValidationSchema),
   auth(USER_ROLE.admin, USER_ROLE.moderator),
-  SubCategoryController.getAllSubCategory,
+  SubCategoryController.createSubCategory,
 );
 
 router.get('/', SubCategoryController.getAllSubCategory);

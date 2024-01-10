@@ -1,5 +1,4 @@
 import { Schema, model } from 'mongoose';
-import { boolean } from 'zod';
 import { TSubCategory } from './SubCategory.interface';
 
 const subCategorySchema = new Schema<TSubCategory>(
@@ -10,7 +9,7 @@ const subCategorySchema = new Schema<TSubCategory>(
       unique: true,
     },
     isDeleted: {
-      type: boolean,
+      type: Boolean,
       default: false,
     },
     category: { type: Schema.Types.ObjectId, ref: 'Category' },

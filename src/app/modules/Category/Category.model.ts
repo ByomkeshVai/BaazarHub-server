@@ -1,6 +1,5 @@
 import { Schema, model } from 'mongoose';
 import { TCategory } from './Category.interface';
-import { boolean } from 'zod';
 
 const categorySchema = new Schema<TCategory>(
   {
@@ -10,11 +9,11 @@ const categorySchema = new Schema<TCategory>(
       unique: true,
     },
     isDeleted: {
-      type: boolean,
+      type: Boolean,
       default: false,
     },
     isPriority: {
-      type: boolean,
+      type: Boolean,
       default: false,
     },
     createdBy: { type: Schema.Types.ObjectId, ref: 'User' },
