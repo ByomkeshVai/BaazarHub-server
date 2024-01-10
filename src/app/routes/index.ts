@@ -1,5 +1,8 @@
 import { Router } from 'express';
 import { UserRoutes } from '../modules/User/User.router';
+import { AuthRoutes } from '../modules/Auth/Auth.router';
+import { CategoryRoutes } from '../modules/Category/Category.route';
+import { SubCategoryRoutes } from '../modules/SubCategory/SubCategory.route';
 const router = Router();
 
 const moduleRoutes = [
@@ -7,18 +10,18 @@ const moduleRoutes = [
     path: '/user',
     route: UserRoutes,
   },
-  // {
-  //   path: '/auth',
-  //   route: AuthRoutes,
-  // },
-  // {
-  //   path: '/courses',
-  //   route: CourseRoutes,
-  // },
-  // {
-  //   path: '/categories',
-  //   route: CategoryRoutes,
-  // },
+  {
+    path: '/auth',
+    route: AuthRoutes,
+  },
+  {
+    path: '/categories',
+    route: CategoryRoutes,
+  },
+  {
+    path: '/sub-categories',
+    route: SubCategoryRoutes,
+  },
   // {
   //   path: '/reviews',
   //   route: ReviewRoutes,

@@ -1,4 +1,3 @@
-import { JwtPayload } from 'jsonwebtoken';
 import Category from '../Category/Category.model';
 import { TSubCategory } from './SubCategory.interface';
 import AppError from '../../../errors/AppError';
@@ -7,14 +6,11 @@ import SubCategory from './SubCategory.model';
 import QueryBuilder from '../../builder/QueryBuilder';
 import { SubCategorySearchableFields } from './SubCategory.constant';
 
-const createSubCategoryDB = async (
-  userData: JwtPayload,
-  payload: TSubCategory,
-) => {
+const createSubCategoryDB = async (payload: TSubCategory) => {
   const categoryName = await Category.findById(payload.category);
 
   if (!categoryName) {
-    throw new AppError(httpStatus.BAD_REQUEST, 'Category not found');
+    throw new AppError(httpStatus.BAD_REQUEST, 'Sub-Category not found');
   }
 
   const result = await SubCategory.create(payload);
