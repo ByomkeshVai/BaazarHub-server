@@ -7,17 +7,20 @@ const userSchema = new Schema<TUser, UserModel>(
   {
     email: {
       type: String,
-      required: true,
+      required: [true, 'Email Name is required'],
       unique: true,
     },
     username: {
       type: String,
-      required: true,
+      required: [true, 'UserName is required'],
       unique: true,
+    },
+    mobile: {
+      type: String,
     },
     password: {
       type: String,
-      required: true,
+      required: [true, 'Password is required'],
       select: 0,
       //   validate: {
       //     validator: function (value: string) {
