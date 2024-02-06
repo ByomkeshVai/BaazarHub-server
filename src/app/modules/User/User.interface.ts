@@ -4,12 +4,13 @@ import { USER_ROLE } from './User.constant';
 /* eslint-disable no-unused-vars */
 export interface TUser {
   _id: string;
+  id: string;
   email: string;
   username: string;
   password: string;
   mobile?: string;
   passwordChangedAt?: Date;
-  role: 'admin' | 'user' | 'moderator';
+  role: 'admin' | 'customer' | 'moderator' | 'vendor';
   passwordHistory?: { password: string; timestamp: Date }[];
 }
 

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const roleEnum = z.enum(['admin', 'user', 'moderator']);
+const roleEnum = z.enum(['admin', 'customer', 'moderator', 'vendor']);
 
 const createUserSchemaValidation = z.object({
   email: z.string().email(),

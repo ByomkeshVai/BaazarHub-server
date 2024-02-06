@@ -8,6 +8,10 @@ const subCategorySchema = new Schema<TSubCategory>(
       required: [true, 'Sub-Category Name is required'],
       unique: true,
     },
+    image: {
+      type: String,
+      required: [true, 'Image Name is required'],
+    },
     isDeleted: {
       type: Boolean,
       default: false,

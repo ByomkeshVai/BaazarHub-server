@@ -3,17 +3,33 @@ import catchAsync from '../../../utils/catchAsync';
 import sendResponse from '../../../utils/sendRequest';
 import { UserServices } from './User.service';
 
-const createUser = catchAsync(async (req, res) => {
-  const result = await UserServices.registerUserIntoDB(req.body);
+const createCustomer = catchAsync(async (req, res) => {
+  const { customer: customerData } = req.body;
+
+  const result = await UserServices.createCustomerIntoDB(customerData);
 
   sendResponse(res, {
     statusCode: httpStatus.CREATED,
     success: true,
-    message: 'User Registered successfully',
+    message: 'Customer Registered successfully',
     data: result,
   });
 });
 
-export const UserControllers = {
-  createUser,
+const createVendor = catchAsync(async (req, res) => {
+  const { vendor: vendorData } = req.body;
+
+  const result = await UserServices.createVendorIntoDB(vendorData);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Vendor is Registered succesfully',
+    data: result,
+  });
+});
+
+export const userController = {
+  createCustomer,
+  createVendor,
 };

@@ -40,8 +40,8 @@ const userSchema = new Schema<TUser, UserModel>(
     passwordHistory: [{ password: String, timestamp: Date }],
     role: {
       type: String,
-      enum: ['user', 'admin', 'moderator'],
-      default: 'user',
+      enum: ['customer', 'admin', 'moderator', 'vendor'],
+      default: 'customer',
     },
   },
   {
