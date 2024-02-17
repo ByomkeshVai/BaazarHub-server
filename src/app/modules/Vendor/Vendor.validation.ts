@@ -28,11 +28,12 @@ export const createVendorValidationSchema = z.object({
       dateOfBirth: z.string().optional(),
       email: z.string().email(),
       contactNo: z.string(),
+      vendorImg: z.string(),
       emergencyContactNo: z.string(),
       presentAddress: z.string(),
       permanentAddress: z.string(),
       shop: createShopValidationSchema,
-      profileImg: z.string(),
+      shopImg: z.string(),
     }),
   }),
 });

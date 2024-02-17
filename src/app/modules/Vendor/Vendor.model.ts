@@ -57,6 +57,10 @@ const vendorSchema = new Schema<TVendor, VendorModel>(
       unique: true,
       ref: 'User',
     },
+    vendorImg: {
+      type: String,
+      required: [true, 'vendor Image is required'],
+    },
     name: {
       type: userNameSchema,
       required: [true, 'Name is required'],

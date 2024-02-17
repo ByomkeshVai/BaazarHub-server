@@ -9,6 +9,7 @@ export interface TUser {
   username: string;
   password: string;
   mobile?: string;
+  image?: string;
   passwordChangedAt?: Date;
   role: 'admin' | 'customer' | 'moderator' | 'vendor';
   passwordHistory?: { password: string; timestamp: Date }[];

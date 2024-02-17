@@ -62,9 +62,10 @@ const createVendorIntoDB = async (payload: TVendor) => {
 
   //set vendor role
   vendorData.role = 'vendor';
-  vendorData.email = payload.email;
-  vendorData.username = payload.username;
-  vendorData.mobile = payload.contactNo;
+  vendorData.email = payload?.email;
+  vendorData.username = payload?.username;
+  vendorData.mobile = payload?.contactNo;
+  vendorData.image = payload?.vendorImg;
 
   const session = await mongoose.startSession();
 

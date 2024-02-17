@@ -19,6 +19,7 @@ export type TVendor = {
   user: Types.ObjectId | string;
   name: TUserName;
   username: string;
+  vendorImg: string;
   gender: 'male' | 'female' | 'other';
   dateOfBirth?: Date;
   email: string;
