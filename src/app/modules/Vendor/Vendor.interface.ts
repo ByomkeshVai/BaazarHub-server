@@ -21,7 +21,7 @@ export type TVendor = {
   username: string;
   vendorImg: string;
   gender: 'male' | 'female' | 'other';
-  dateOfBirth?: Date;
+  dateOfBirth?: string;
   email: string;
   contactNo: string;
   emergencyContactNo: string;
